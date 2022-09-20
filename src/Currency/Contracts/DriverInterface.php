@@ -9,8 +9,7 @@ interface DriverInterface
     /**
      * Create a new currency.
      *
-     * @param array $params
-     *
+     * @param  array  $params
      * @return bool
      */
     public function create(array $params);
@@ -25,9 +24,8 @@ interface DriverInterface
     /**
      * Get given currency from storage.
      *
-     * @param string $code
-     * @param int    $active
-     *
+     * @param  string  $code
+     * @param  int  $active
      * @return mixed
      */
     public function find($code, $active = 1);
@@ -35,10 +33,9 @@ interface DriverInterface
     /**
      * Update given currency.
      *
-     * @param string   $code
-     * @param array    $attributes
-     * @param DateTime $timestamp
-     *
+     * @param  string  $code
+     * @param  array  $attributes
+     * @param  DateTime  $timestamp
      * @return int
      */
     public function update($code, array $attributes, DateTime $timestamp = null);

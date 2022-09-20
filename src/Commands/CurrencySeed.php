@@ -2,10 +2,9 @@
 
 namespace Notchpay\Toolkit\Commands;
 
-use Illuminate\Support\Arr;
 use Illuminate\Console\Command;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 use Notchpay\Toolkit\Currency;
 
@@ -41,8 +40,6 @@ class CurrencySeed extends Command
 
     protected $rates;
 
-
-
     /**
      * Create a new command instance.
      */
@@ -70,7 +67,7 @@ class CurrencySeed extends Command
      */
     public function handle()
     {
-        $this->info("Seeding Currency");
+        $this->info('Seeding Currency');
 
         $str = file_get_contents(dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'data'.DIRECTORY_SEPARATOR.'currencies.json');
 
@@ -78,9 +75,9 @@ class CurrencySeed extends Command
             case 'model':
                 $model = config('notchpay-toolkit.currency.drivers.model.class');
 
-                if($model::count() == 0) {
-                    collect(json_decode($str, true))->each(function($currency) use ($model) {
-                        $model::create(Arr::only($currency, ['name', 'code', 'symbol','format' ,'exchange_rate', 'fraction']));
+                if ($model::count() == 0) {
+                    collect(json_decode($str, true))->each(function ($currency) use ($model) {
+                        $model::create(Arr::only($currency, ['name', 'code', 'symbol', 'format', 'exchange_rate', 'fraction']));
                     });
                 }
 
@@ -91,8 +88,8 @@ class CurrencySeed extends Command
                 $this->currencies = DB::table($table)->get();
 
                 if (count($this->currencies) == 0) {
-                    collect(json_decode($str, true))->each(function($currency) use ($table) {
-                        DB::table($table)->insert(Arr::only($currency, ['name', 'code', 'symbol','format' ,'exchange_rate', 'fraction']));
+                    collect(json_decode($str, true))->each(function ($currency) use ($table) {
+                        DB::table($table)->insert(Arr::only($currency, ['name', 'code', 'symbol', 'format', 'exchange_rate', 'fraction']));
                     });
                 }
 
@@ -101,8 +98,7 @@ class CurrencySeed extends Command
                 $path = config('notchpay-toolkit.currency.drivers.filesystem.path');
 
                 Storage::disk(config('notchpay-toolkit.currency.drivers.filesystem.disk'))->put($path, json_encode(json_decode($str)));
-            break;
+                break;
         }
-
     }
 }

@@ -2,8 +2,8 @@
 
 namespace Notchpay\Toolkit;
 
-use Illuminate\Support\Arr;
 use Illuminate\Contracts\Cache\Factory as FactoryContract;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 
 class Currency
@@ -53,8 +53,8 @@ class Currency
     /**
      * Create a new instance.
      *
-     * @param array           $config
-     * @param FactoryContract $cache
+     * @param  array  $config
+     * @param  FactoryContract  $cache
      */
     public function __construct(FactoryContract $cache)
     {
@@ -65,11 +65,10 @@ class Currency
     /**
      * Format given number.
      *
-     * @param float  $amount
-     * @param string $from
-     * @param string $to
-     * @param bool   $format
-     *
+     * @param  float  $amount
+     * @param  string  $from
+     * @param  string  $to
+     * @param  bool  $format
      * @return string|null
      */
     public function convert($amount, $from = null, $to = null, $format = true)
@@ -110,10 +109,9 @@ class Currency
     /**
      * Format the value into the desired currency.
      *
-     * @param float  $value
-     * @param string $code
-     * @param bool   $include_symbol
-     *
+     * @param  float  $value
+     * @param  string  $code
+     * @param  bool  $include_symbol
      * @return string
      */
     public function format($value, $code = null, $include_symbol = true)
@@ -171,11 +169,9 @@ class Currency
                 $currency = DB::table($table)->where('code', $code)->first();
                 break;
             default:
-                # code...
+                // code...
                 break;
         }
-
-
 
         $value = number_format((float) $value, (int) ($currency->fraction ?? 2), $decimal, $thousand);
         // Apply the formatted measurement
@@ -184,13 +180,13 @@ class Currency
         }
 
         // Return value
-        return $negative . $value;
+        return $negative.$value;
     }
 
     /**
      * Set user's currency.
      *
-     * @param string $code
+     * @param  string  $code
      */
     public function setUserCurrency($code)
     {
@@ -210,8 +206,7 @@ class Currency
     /**
      * Determine if the provided currency is valid.
      *
-     * @param string $code
-     *
+     * @param  string  $code
      * @return array|null
      */
     public function hasCurrency($code)
@@ -222,8 +217,7 @@ class Currency
     /**
      * Determine if the provided currency is active.
      *
-     * @param string $code
-     *
+     * @param  string  $code
      * @return bool
      */
     public function isActive($code)
@@ -235,8 +229,7 @@ class Currency
      * Return the current currency if the
      * one supplied is not valid.
      *
-     * @param string $code
-     *
+     * @param  string  $code
      * @return array|null
      */
     public function getCurrency($code = null)
@@ -295,7 +288,7 @@ class Currency
     {
         if ($this->driver === null) {
             // Get driver configuration
-            $config = $this->config('drivers.' . $this->config('driver'), []);
+            $config = $this->config('drivers.'.$this->config('driver'), []);
 
             // Get driver class
             $driver = Arr::pull($config, 'class');
@@ -316,7 +309,7 @@ class Currency
     {
         if ($this->formatter === null && $this->config('formatter') !== null) {
             // Get formatter configuration
-            $config = $this->config('formatters.' . $this->config('formatter'), []);
+            $config = $this->config('formatters.'.$this->config('formatter'), []);
 
             // Get formatter class
             $class = Arr::pull($config, 'class');
@@ -340,9 +333,8 @@ class Currency
     /**
      * Get configuration value.
      *
-     * @param string $key
-     * @param mixed  $default
-     *
+     * @param  string  $key
+     * @param  mixed  $default
      * @return mixed
      */
     public function config($key = null, $default = null)
@@ -357,10 +349,9 @@ class Currency
     /**
      * Get the given property value from provided currency.
      *
-     * @param string $code
-     * @param string $key
-     * @param mixed  $default
-     *
+     * @param  string  $code
+     * @param  string  $key
+     * @param  mixed  $default
      * @return array
      */
     protected function getCurrencyProp($code, $key, $default = null)
@@ -371,8 +362,7 @@ class Currency
     /**
      * Get a given value from the current currency.
      *
-     * @param string $key
-     *
+     * @param  string  $key
      * @return mixed
      */
     public function __get($key)
@@ -383,9 +373,8 @@ class Currency
     /**
      * Dynamically call the default driver instance.
      *
-     * @param string $method
-     * @param array  $parameters
-     *
+     * @param  string  $method
+     * @param  array  $parameters
      * @return mixed
      */
     public function __call($method, $parameters)

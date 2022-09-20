@@ -3,8 +3,8 @@
 namespace Notchpay\Toolkit\Currency\Drivers;
 
 use DateTime;
-use Illuminate\Support\Collection;
 use Illuminate\Database\DatabaseManager;
+use Illuminate\Support\Collection;
 
 class Database extends AbstractDriver
 {
@@ -18,7 +18,7 @@ class Database extends AbstractDriver
     /**
      * Create a new driver instance.
      *
-     * @param array $config
+     * @param  array  $config
      */
     public function __construct(array $config)
     {

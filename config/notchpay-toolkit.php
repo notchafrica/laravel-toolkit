@@ -2,7 +2,7 @@
 
 // config for Notchpay/Toolkit
 return [
-    "currency" => [
+    'currency' => [
         'default' => 'USD',
 
         /*
@@ -15,9 +15,9 @@ return [
         |
         */
 
-            'api_key' => env(
-                "RESTUNIVERE_API_KEY",
-            ),
+        'api_key' => env(
+            'RESTUNIVERE_API_KEY',
+        ),
 
         /*
         |--------------------------------------------------------------------------
@@ -31,7 +31,7 @@ return [
         |
         */
 
-            'driver' => 'filesystem',
+        'driver' => 'filesystem',
 
         /*
         |--------------------------------------------------------------------------
@@ -66,13 +66,13 @@ return [
 
             'filesystem' => [
                 'class' => \Notchpay\Toolkit\Currency\Drivers\Filesystem::class,
-                'disk' => "local",
+                'disk' => 'local',
                 'path' => 'currencies.json',
             ],
 
             'model' => [
                 'table' => 'currencies',
-                'class' => \Notchpay\Toolkit\Currency\Models\Currency::class
+                'class' => \Notchpay\Toolkit\Currency\Models\Currency::class,
             ],
 
         ],
@@ -108,5 +108,5 @@ return [
             ],
 
         ],
-    ]
+    ],
 ];

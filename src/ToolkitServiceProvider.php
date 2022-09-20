@@ -7,7 +7,6 @@ use Notchpay\Toolkit\Commands\CurrencyHydrate;
 use Notchpay\Toolkit\Commands\CurrencySeed;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Notchpay\Toolkit\Commands\ToolkitCommand;
 
 class ToolkitServiceProvider extends PackageServiceProvider
 {
