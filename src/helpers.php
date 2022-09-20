@@ -1,38 +1,38 @@
 <?php
 
-if (!function_exists('currency')) {
+use Notchpay\Toolkit\Currency;
+
+if (! function_exists('currency')) {
     /**
      * Convert given number.
      *
-     * @param float  $amount
-     * @param string $from
-     * @param string $to
-     * @param bool   $format
-     *
+     * @param  float  $amount
+     * @param  string  $from
+     * @param  string  $to
+     * @param  bool  $format
      * @return \Notchpay\Toolkit\Currency\Currency|string
      */
     function currency($amount = null, $from = null, $to = null, $format = true)
     {
         if (is_null($amount)) {
-            return app('currency');
+            return app(Currency::class);
         }
 
-        return app('currency')->convert($amount, $from, $to, $format);
+        return app(Currency::class)->convert($amount, $from, $to, $format);
     }
 }
 
-if (!function_exists('currency_format')) {
+if (! function_exists('currency_format')) {
     /**
      * Format given number.
      *
-     * @param float  $amount
-     * @param string $currency
-     * @param bool   $include_symbol
-     *
+     * @param  float  $amount
+     * @param  string  $currency
+     * @param  bool  $include_symbol
      * @return string
      */
     function currency_format($amount = null, $currency = null, $include_symbol = true)
     {
-        return app('currency')->format($amount, $currency, $include_symbol);
+        return app(Currency::class)->format($amount, $currency, $include_symbol);
     }
 }
