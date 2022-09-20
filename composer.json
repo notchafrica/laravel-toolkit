@@ -1,17 +1,22 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "notchpay/laravel-toolkit",
+    "description": "This is my package laravel-toolkit",
     "keywords": [
-        ":vendor_name",
+        "notchpay",
         "laravel",
-        ":package_slug"
+        "currency",
+        "money",
+        "exchange rate",
+        "Exchange Rates API",
+        "finance",
+        "notchpay-toolkit"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/notchpay/laravel-toolkit",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "chapdel",
+            "email": "chapdel.kamga2@gmail.com",
             "role": "Developer"
         }
     ],
@@ -30,18 +35,20 @@
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan-deprecation-rules": "^1.0",
         "phpstan/phpstan-phpunit": "^1.0",
-        "phpunit/phpunit": "^9.5",
-        "spatie/laravel-ray": "^1.26"
+        "phpunit/phpunit": "^9.5"
     },
     "autoload": {
+        "files": [
+            "src/helpers.php"
+          ],
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "Notchpay\\Toolkit\\": "src",
+            "Notchpay\\Toolkit\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Notchpay\\Toolkit\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -51,15 +58,20 @@
         "format": "vendor/bin/pint"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Notchpay\\Toolkit\\ToolkitServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "Toolkit": "Notchpay\\Toolkit\\Facades\\Toolkit",
+                "Currency": "Notchpay\\Toolkit\\Facades\\Currency"
             }
         }
     },

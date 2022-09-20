@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Notchpay\Toolkit\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class ToolkitCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-toolkit';
 
     public $description = 'My command';
 
