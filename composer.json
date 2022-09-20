@@ -42,8 +42,7 @@
             "src/helpers.php"
           ],
         "psr-4": {
-            "Notchpay\\Toolkit\\": "src",
-            "Notchpay\\Toolkit\\Database\\Factories\\": "database/factories"
+            "Notchpay\\Toolkit\\": "src"
         }
     },
     "autoload-dev": {
