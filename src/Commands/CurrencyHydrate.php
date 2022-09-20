@@ -2,8 +2,8 @@
 
 namespace Notchpay\Toolkit\Commands;
 
-use Illuminate\Support\Arr;
 use Illuminate\Console\Command;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Notchpay\Toolkit\Currency;
@@ -1018,15 +1018,12 @@ class CurrencyHydrate extends Command
      */
     public function handle()
     {
-
         //get rates form forexapi
         $r = Http::withHeaders([
             'X-API-Key' => config('currency.api_key'),
         ])->withOptions(['verify' => false])->get('http://localhost:10000/currencies/rates');
 
-
         if ($r->successful()) {
-
             switch (config('currency.driver')) {
                 case 'model':
                     $model = config('currency.drivers.model.class');
@@ -1038,10 +1035,9 @@ class CurrencyHydrate extends Command
                             $model::create(Arr::only($rate, ['name', 'code', 'symbol', 'exchange_rate', 'fraction', 'format']));
                         }
                     } else {
-
                         foreach ($r->json() as $rate) {
-                            $currency = $this->currencies->where("code", $rate['code'])->first();
-                            $currency->update(Arr::only($rate, ['exchange_rate',]));
+                            $currency = $this->currencies->where('code', $rate['code'])->first();
+                            $currency->update(Arr::only($rate, ['exchange_rate']));
                         }
                     }
 
@@ -1056,25 +1052,22 @@ class CurrencyHydrate extends Command
                             DB::table($table)->insert(Arr::only($rate, ['name', 'code', 'symbol', 'exchange_rate', 'fraction']));
                         }
                     } else {
-
                         foreach ($r->json() as $rate) {
-                            $currency = $this->currencies->where("code", $rate['code'])->first();
-                            $currency->update(Arr::only($rate, ['exchange_rate',]));
+                            $currency = $this->currencies->where('code', $rate['code'])->first();
+                            $currency->update(Arr::only($rate, ['exchange_rate']));
                         }
                     }
 
                     break;
 
                 default:
-                    # code...
+                    // code...
                     break;
             }
 
-
-            $this->info("Rates hydrated from Rest Universe");
+            $this->info('Rates hydrated from Rest Universe');
         } else {
-
-            $this->error("Failed to fetch rates from Rest Universe");
+            $this->error('Failed to fetch rates from Rest Universe');
         }
     }
 }

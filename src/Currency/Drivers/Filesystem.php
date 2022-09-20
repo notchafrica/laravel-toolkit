@@ -3,9 +3,7 @@
 namespace Notchpay\Toolkit\Currency\Drivers;
 
 use DateTime;
-use Exception;
 use Illuminate\Support\Arr;
-use Illuminate\Contracts\Filesystem\Factory as FactoryContract;
 
 class Filesystem extends AbstractDriver
 {
@@ -19,7 +17,7 @@ class Filesystem extends AbstractDriver
     /**
      * Create a new driver instance.
      *
-     * @param array $config
+     * @param  array  $config
      */
     public function __construct(array $config)
     {
@@ -72,7 +70,7 @@ class Filesystem extends AbstractDriver
         // Get contents if file exists
         $contents = $this->filesystem->exists($path)
             ? $this->filesystem->get($path)
-            : "{}";
+            : '{}';
 
         return json_decode($contents, true);
     }
