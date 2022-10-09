@@ -255,13 +255,7 @@ class Currency
     public function getCurrencies()
     {
         if ($this->currencies_cache === null) {
-            if (config('app.debug', false) === true) {
-                $this->currencies_cache = $this->getDriver()->all();
-            } else {
-                $this->currencies_cache = $this->cache->rememberForever('toolkit.currency', function () {
-                    return $this->getDriver()->all();
-                });
-            }
+            $this->currencies_cache = $this->getDriver()->all();
         }
 
         return $this->currencies_cache;
