@@ -1020,7 +1020,7 @@ class CurrencyHydrate extends Command
     public function handle()
     {
 
-        $r = Http::withOptions(['verify' => false])->get('https://api.exchangerate.host/latest?base=XAF');
+        $r = Http::withOptions(['verify' => false])->get('https://api.exchangerate.host/2018-05-11?base=XAFF');
 
         if ($r->ok()) {
             foreach ($r->json()['rates'] as $code => $rate) {
