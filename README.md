@@ -1,26 +1,14 @@
-# Notch Pay Laravel-toolkit
+# Laravel-toolkit
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/notchpay/laravel-toolkit.svg?style=flat-square)](https://packagist.org/packages/notchpay/laravel-toolkit)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/notchpay/laravel-toolkit/run-tests?label=tests)](https://github.com/notchpay/laravel-toolkit/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/notchpay/laravel-toolkit/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/notchpay/laravel-toolkit/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/notchpay/laravel-toolkit.svg?style=flat-square)](https://packagist.org/packages/notchpay/laravel-toolkit)
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-toolkit.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-toolkit)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require notchpay/laravel-toolkit
+composer require notchafrica/laravel-toolkit
 ```
 
 You can publish and run the migrations with:
@@ -97,20 +85,20 @@ return [
         'drivers' => [
 
             'database' => [
-                'class' => \Notchpay\Toolkit\Currency\Drivers\Database::class,
+                'class' => \Notch\Toolkit\Currency\Drivers\Database::class,
                 'connection' => null,
                 'table' => 'currencies',
             ],
 
             'filesystem' => [
-                'class' => \Notchpay\Toolkit\Currency\Drivers\Filesystem::class,
+                'class' => \Notch\Toolkit\Currency\Drivers\Filesystem::class,
                 'disk' => "local",
                 'path' => 'currencies.json',
             ],
 
             'model' => [
                 'table' => 'currencies',
-                'class' => \Notchpay\Toolkit\Currency\Models\Currency::class
+                'class' => \Notch\Toolkit\Currency\Models\Currency::class
             ],
 
         ],
@@ -142,7 +130,7 @@ return [
         'formatters' => [
 
             'php_intl' => [
-                'class' => \Notchpay\Toolkit\Currency\Formatters\PHPIntl::class,
+                'class' => \Notch\Toolkit\Currency\Formatters\PHPIntl::class,
             ],
 
         ],
