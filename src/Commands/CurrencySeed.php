@@ -1,12 +1,12 @@
 <?php
 
-namespace Notchpay\Toolkit\Commands;
+namespace Notch\Toolkit\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
-use Notchpay\Toolkit\Currency;
+use Notch\Toolkit\Currency;
 
 class CurrencySeed extends Command
 {

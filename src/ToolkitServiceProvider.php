@@ -1,10 +1,10 @@
 <?php
 
-namespace Notchpay\Toolkit;
+namespace Notch\Toolkit;
 
-use Notchpay\Toolkit\Commands\CurrencyCleanup;
-use Notchpay\Toolkit\Commands\CurrencyHydrate;
-use Notchpay\Toolkit\Commands\CurrencySeed;
+use Notch\Toolkit\Commands\CurrencyCleanup;
+use Notch\Toolkit\Commands\CurrencyHydrate;
+use Notch\Toolkit\Commands\CurrencySeed;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -19,7 +19,7 @@ class ToolkitServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-toolkit')
-            ->hasConfigFile('notchpay-toolkit')
+            ->hasConfigFile('notch-toolkit')
             ->hasMigration('create_currency_table')
             ->hasCommand(CurrencyHydrate::class)
             ->hasCommand(CurrencySeed::class)

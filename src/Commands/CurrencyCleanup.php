@@ -1,9 +1,9 @@
 <?php
 
-namespace Notchpay\Toolkit\Commands;
+namespace Notch\Toolkit\Commands;
 
 use Illuminate\Console\Command;
-use Notchpay\Toolkit\Currency;
+use Notch\Toolkit\Currency;
 
 class CurrencyCleanup extends Command
 {

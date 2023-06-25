@@ -59,20 +59,20 @@ return [
         'drivers' => [
 
             'database' => [
-                'class' => \Notchpay\Toolkit\Currency\Drivers\Database::class,
+                'class' => \Notch\Toolkit\Currency\Drivers\Database::class,
                 'connection' => null,
                 'table' => 'currencies',
             ],
 
             'filesystem' => [
-                'class' => \Notchpay\Toolkit\Currency\Drivers\Filesystem::class,
+                'class' => \Notch\Toolkit\Currency\Drivers\Filesystem::class,
                 'disk' => 'local',
                 'path' => 'currencies.json',
             ],
 
             'model' => [
                 'table' => 'currencies',
-                'class' => \Notchpay\Toolkit\Currency\Models\Currency::class,
+                'class' => \Notch\Toolkit\Currency\Models\Currency::class,
             ],
 
         ],
@@ -104,7 +104,7 @@ return [
         'formatters' => [
 
             'php_intl' => [
-                'class' => \Notchpay\Toolkit\Currency\Formatters\PHPIntl::class,
+                'class' => \Notch\Toolkit\Currency\Formatters\PHPIntl::class,
             ],
 
         ],

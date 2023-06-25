@@ -1,9 +1,9 @@
 <?php
 
-namespace Notchpay\Toolkit\Currency\Drivers;
+namespace Notch\Toolkit\Currency\Drivers;
 
 use Illuminate\Support\Arr;
-use Notchpay\Toolkit\Currency\Contracts\DriverInterface;
+use Notch\Toolkit\Currency\Contracts\DriverInterface;
 
 abstract class AbstractDriver implements DriverInterface
 {

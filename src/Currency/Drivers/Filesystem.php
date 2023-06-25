@@ -1,6 +1,6 @@
 <?php
 
-namespace Notchpay\Toolkit\Currency\Drivers;
+namespace Notch\Toolkit\Currency\Drivers;
 
 use DateTime;
 use Illuminate\Support\Arr;

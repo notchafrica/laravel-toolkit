@@ -1,13 +1,13 @@
 <?php
 
-namespace Notchpay\Toolkit\Commands;
+namespace Notch\Toolkit\Commands;
 
 use App\Models\Currency as ModelsCurrency;
 use Illuminate\Console\Command;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
-use Notchpay\Toolkit\Currency;
+use Notch\Toolkit\Currency;
 
 class CurrencyHydrate extends Command
 {

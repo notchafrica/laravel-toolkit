@@ -1,6 +1,6 @@
 <?php
 
-namespace Notchpay\Toolkit;
+namespace Notch\Toolkit;
 
 use Illuminate\Contracts\Cache\Factory as FactoryContract;
 use Illuminate\Support\Arr;

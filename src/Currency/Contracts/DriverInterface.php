@@ -1,6 +1,6 @@
 <?php
 
-namespace Notchpay\Toolkit\Currency\Contracts;
+namespace Notch\Toolkit\Currency\Contracts;
 
 use DateTime;
 

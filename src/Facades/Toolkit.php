@@ -1,16 +1,16 @@
 <?php
 
-namespace Notchpay\Toolkit\Facades;
+namespace Notch\Toolkit\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Notchpay\Toolkit\Toolkit
+ * @see \Notch\Toolkit\Toolkit
  */
 class Toolkit extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return \Notchpay\Toolkit\Toolkit::class;
+        return \Notch\Toolkit\Toolkit::class;
     }
 }

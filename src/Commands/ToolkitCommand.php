@@ -1,6 +1,6 @@
 <?php
 
-namespace Notchpay\Toolkit\Commands;
+namespace Notch\Toolkit\Commands;
 
 use Illuminate\Console\Command;
 

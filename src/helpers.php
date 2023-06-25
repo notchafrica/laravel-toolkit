@@ -1,6 +1,6 @@
 <?php
 
-use Notchpay\Toolkit\Currency;
+use Notch\Toolkit\Currency;
 
 if (! function_exists('currency')) {
     /**
@@ -10,7 +10,7 @@ if (! function_exists('currency')) {
      * @param  string  $from
      * @param  string  $to
      * @param  bool  $format
-     * @return \Notchpay\Toolkit\Currency\Currency|string
+     * @return \Notch\Toolkit\Currency\Currency|string
      */
     function currency($amount = null, $from = null, $to = null, $format = true)
     {

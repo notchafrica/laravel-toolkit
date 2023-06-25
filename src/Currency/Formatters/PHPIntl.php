@@ -1,8 +1,8 @@
 <?php
 
-namespace Notchpay\Toolkit\Currency\Formatters;
+namespace Notch\Toolkit\Currency\Formatters;
 
-use Notchpay\Toolkit\Currency\Contracts\FormatterInterface;
+use Notch\Toolkit\Currency\Contracts\FormatterInterface;
 use NumberFormatter;
 
 class PHPIntl implements FormatterInterface

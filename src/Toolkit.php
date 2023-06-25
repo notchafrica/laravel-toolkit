@@ -1,6 +1,6 @@
 <?php
 
-namespace Notchpay\Toolkit;
+namespace Notch\Toolkit;
 
 class Toolkit
 {

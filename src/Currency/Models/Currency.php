@@ -1,6 +1,6 @@
 <?php
 
-namespace Notchpay\Toolkit\Currency\Models;
+namespace Notch\Toolkit\Currency\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

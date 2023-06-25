@@ -1,6 +1,6 @@
 <?php
 
-namespace Notchpay\Toolkit\Facades;
+namespace Notch\Toolkit\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -13,6 +13,6 @@ class Currency extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return \Notchpay\Toolkit\Currency::class;
+        return \Notch\Toolkit\Currency::class;
     }
 }
