@@ -4,7 +4,6 @@ namespace Notch\Toolkit;
 
 use Illuminate\Contracts\Cache\Factory as FactoryContract;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 
 class Currency
@@ -162,19 +161,14 @@ class Currency
 
         switch ($this->config('driver')) {
             case 'model':
-                $currency = Cache::remember('currency.' . $code, 3600 * 12, function () use ($code) {
-                    $model = $this->config('drivers.model.class');
-                    return $model::where('code', $code)->first();
-                });
+                $model = $this->config('drivers.model.class');
+                $currency = $model::where('code', $code)->first();
 
                 break;
             case 'database':
 
-
-                $currency = Cache::remember('currency.' . $code, 3600 * 12, function () use ($code) {
-                    $table = $this->config('drivers.model.table');
-                    return DB::table($table)->where('code', $code)->first();
-                });
+                $table = $this->config('drivers.model.table');
+                $currency = DB::table($table)->where('code', $code)->first();
                 break;
             default:
                 // code...
@@ -262,9 +256,7 @@ class Currency
      */
     public function getCurrencies()
     {
-        return Cache::remember('currencies.list', 3600 * 12, function () {
-            return $this->getDriver()->all();
-        });
+        return $this->getDriver()->all();
     }
 
     /**
