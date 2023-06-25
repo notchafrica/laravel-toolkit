@@ -1,5 +1,5 @@
 {
-    "name": "notchpay/laravel-toolkit",
+    "name": "notchafrica/laravel-toolkit",
     "description": "This is my package laravel-toolkit",
     "keywords": [
         "notchpay",
@@ -11,7 +11,7 @@
         "finance",
         "notchpay-toolkit"
     ],
-    "homepage": "https://github.com/notchpay/laravel-toolkit",
+    "homepage": "https://github.com/notchafrica/laravel-toolkit",
     "license": "MIT",
     "authors": [
         {
@@ -42,12 +42,12 @@
             "src/helpers.php"
           ],
         "psr-4": {
-            "Notchpay\\Toolkit\\": "src"
+            "Notch\\Toolkit\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Notchpay\\Toolkit\\Tests\\": "tests"
+            "Notch\\Toolkit\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -66,11 +66,11 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Notchpay\\Toolkit\\ToolkitServiceProvider"
+                "Notch\\Toolkit\\ToolkitServiceProvider"
             ],
             "aliases": {
-                "Toolkit": "Notchpay\\Toolkit\\Facades\\Toolkit",
-                "Currency": "Notchpay\\Toolkit\\Facades\\Currency"
+                "Toolkit": "Notch\\Toolkit\\Facades\\Toolkit",
+                "Currency": "Notch\\Toolkit\\Facades\\Currency"
             }
         }
     },
