@@ -58,7 +58,7 @@ class Currency
      */
     public function __construct(FactoryContract $cache)
     {
-        $this->config = config('notchpay-toolkit.currency');
+        $this->config = config('notch-toolkit.currency');
         $this->cache = $cache->store($this->config('cache_driver'));
     }
 
@@ -318,7 +318,7 @@ class Currency
      */
     public function clearCache()
     {
-        $this->cache->forget('notchpay.currency');
+        $this->cache->forget('notch.currency');
         $this->currencies_cache = null;
     }
 
